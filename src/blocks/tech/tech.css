@@ -1,0 +1,15 @@
+@import url(__title/tech__title.css);
+@import url(__name/tech__name.css);
+@import url(__block/tech__block.css);
+@import url(__icons/tech__icons.css);
+
+.tech{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: calc(100% - 210px);
+    padding: 80px 105px;
+    background: #F5F6F7;
+}

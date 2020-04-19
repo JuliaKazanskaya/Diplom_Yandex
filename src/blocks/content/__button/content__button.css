@@ -1,0 +1,18 @@
+.content__button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #1a1b22;
+  width: 288px;
+  height: 64px;
+  background: #fff;
+  border-radius: 80px;
+  border: 0;
+  margin: 64px 0 0 0;
+  padding: 0 84px 0 84px;
+}

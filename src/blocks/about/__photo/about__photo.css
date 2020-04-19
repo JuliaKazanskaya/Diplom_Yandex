@@ -1,0 +1,12 @@
+.about__photo {
+  border-radius: 1000px;
+  height: 464px;
+  width: 464px;
+  padding: 0;
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+  .about__photo {
+    height: 14.5em;
+    width: 14.5em;
+  }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Болелова Юлия" />
+    <meta
+      name="description"
+      content="Сервис поиска новостей по заданной тематике за последнюю неделю с просмотром аналитики."
+    />
+    <title>NewsAnalyzer: О проекте</title>
+    <link
+      rel="shortcut icon"
+      href="<%= require('../images/favicon.png')%>"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.about.css %>"
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <nav class="navigation navigation_color_black">
+          <h4 class="navigation__title">NewsAnalyzer</h4>
+          <ul class="navigation__menu">
+            <li class="navigation__text">
+              <a
+                href="../index.html"
+                class="navigation__link navigation__link_nonactive"
+                >Главная</a
+              >
+            </li>
+            <li class="navigation__text">
+              <a
+                href="./about.html"
+                class="navigation__link navigation__link_active"
+                >О проекте</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="content">
+        <div class="clients">
+          <h3 class="about__title">Клиентам</h3>
+          <p class="about__text clients__text">
+            Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель —
+            показать, чему научился студент, какими технологиями владеет.
+          </p>
+          <p class="about__text clients__text">
+            Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и
+            масштабируемым. Кроме того, добавлять новые страницы и
+            функциональность проще и быстрее, чем в проектах, выполненных по
+            другим методологиям. Также сайт проще и дешевле поддерживать.
+          </p>
+          <p class="about__text clients__text">
+            Карточки с новостями приходят с сервера и обрабатываются асинхронно.
+            То есть сайт продолжает работать, пока от сервера приходит ответ.
+            Это повышает удобство использования сервиса.
+          </p>
+          <p class="about__text clients__text">
+            При создании проекта была использована сборка технологией Webpack.
+            Это современный подход к разработке сайтов. Код оптимизируется, а
+            значит, сайт работает быстрее. Также сайт работает в старых
+            браузерах. Даже если посетители — пользователи старых операционных
+            систем, у них не будет проблем с отображением. А значит,
+            потенциальная аудитория возрастает.
+          </p>
+          <p class="about__text clients__text">
+            Проект был проверен экспертами Яндекс.Практикума. Если вашему
+            бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+          </p>
+        </div>
+        <div class="tech">
+          <h4 class="tech__title">Используемые технологии</h4>
+          <div class="tech__icons">
+            <div class="tech__block">
+              <h5 class="tech__name">HTML</h5>
+              <img src="<%= require('../images/html.png')%>" alt="HTML" />
+            </div>
+            <div class="tech__block">
+              <h5 class="tech__name">CSS</h5>
+              <img src="<%= require('../images/css.png')%>" alt="CSS" />
+            </div>
+            <div class="tech__block">
+              <h5 class="tech__name">Java Script</h5>
+              <img src="<%= require('../images/js.png')%>" alt="Java Script" />
+            </div>
+            <div class="tech__block">
+              <h5 class="tech__name">Webpack</h5>
+              <img src="<%= require('../images/webpack.png')%>" alt="Webpack" />
+            </div>
+          </div>
+        </div>
+        <div class="about">
+          <img
+            src="<%=require('../images/me.jpg')%>"
+            alt="My photo"
+            class="about__photo"
+          />
+          <div class="about__paragraph">
+            <h3 class="about__title">Об авторе</h3>
+            <p class="about__text">
+              Меня зовут Болелова Юлия и я frontend разработчик. В ходе обучения
+              на Яндекс.Практикуме мною были освоены технологии HTML5, CSS3 и
+              JavaScript ES6, GIT и WebPack.
+            </p>
+            <p class="about__text">
+              Умею работать с семантическими тегами HTML. Верстать адаптивно и
+              валидною. Использую методогию БЭМ. Относительно JS взаимодействую
+              с DOM элементами страницы, умею работать с API.
+            </p>
+          </div>
+        </div>
+        <div class="commits">
+          <div class="commtits__block">
+            <h3 class="commits__title">История коммитов из GitHub</h3>
+            <a href="https://github.com/JuliaBolelova/" class="commits__link">Открыть в GitHub ></a>
+          </div>
+          <div class="commits__cards">
+            <div class="commits__card">
+              <h5 class="commits__date"></h5>
+
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <span class="footer__copy">&#169; 2019 Supersite</span>
+        <ul class="footer__nav">
+          <li class="footer__point"><a href="../index.html">Главная</a></li>
+          <li class="footer__point"><a href="./about.html">О проекте</a></li>
+          <li class="footer__point">
+            <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+          </li>
+        </ul>
+        <div class="footer__icons">
+          <a href="https://github.com/JuliaBolelova/" class="footer__icon"
+            ><img
+              src="<%=require('../images/github.png')%>"
+              alt="github"
+              class="footer__img"
+          /></a>
+          <a href="https://facebook.com" class="footer__icon"
+            ><img
+              src="<%=require('../images/facebook.png')%>"
+              alt="facebook"
+              class="footer__img"
+          /></a>
+        </div>
+      </footer>
+      <script
+        type="module"
+        src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"
+      ></script>
+    </div>
+  </body>
+</html>

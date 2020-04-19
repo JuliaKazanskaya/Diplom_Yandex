@@ -1,0 +1,35 @@
+@import url(__main/header__main.css);
+@import url(__title/header__title.css);
+@import url(__subtitle/header__subtitle.css);
+@import url(__search/header__search.css);
+@import url(__field/header__field.css);
+@import url(__button/header__button.css);
+@import url(_bg/header_bg_pic.css);
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 576px;
+  color: #fff;
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+  .header {
+    max-height: 400px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .header {
+
+  }
+}
+@media (max-width: 319px) {
+  .header {
+    max-height: 536px;
+    height: 31.6em;
+  }
+}

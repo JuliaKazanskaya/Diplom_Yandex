@@ -1,0 +1,12 @@
+@import url(__text/clients__text.css);
+
+.clients{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 80px 105px;
+    max-width: 100%;
+    width: calc(100% - 210px);
+}

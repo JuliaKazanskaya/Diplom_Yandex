@@ -1,0 +1,10 @@
+.tech__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 60px 0 0;
+}
+.tech__block:last-of-type{
+    margin: 0;
+}

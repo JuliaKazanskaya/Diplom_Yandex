@@ -1,0 +1,16 @@
+@import url(__copy/footer__copy.css);
+@import url(__icon/footer__icon.css);
+@import url(__icons/footer__icons.css);
+@import url(__img/footer__img.css);
+@import url(__nav/footer__nav.css);
+@import url(__point/footer__point.css);
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0 0 0;
+    width: 100%;
+}

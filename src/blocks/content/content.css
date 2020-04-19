@@ -1,0 +1,23 @@
+@import url(__circle-preloader/content__circle-preloader.css);
+@import url(__loading-text/content__loading-text.css);
+@import url(__loading/content__loading.css);
+@import url(__nothing/content__nothing.css);
+@import url(__nothing-pic/content__nothing-pic.css);
+@import url(__nothing-text/content__nothing-text.css);
+@import url(__nothing-title/content__nothing-title.css);
+@import url(__result/content__result.css);
+@import url(__result-inf/content__result-inf.css);
+@import url(__result-title/content__result-title.css);
+@import url(__result-analytics/content__result-analytics.css);
+@import url(__button/content__button.css);
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
