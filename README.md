@@ -1,2 +1,0 @@
-# Diplom_Yandex
- 
