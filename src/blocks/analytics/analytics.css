@@ -1,0 +1,26 @@
+@import url(_color/analytics_color_black.css);
+@import url(__text/analytics__text.css);
+@import url(__text-news/analytics__text-news.css);
+
+.analytics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  margin: 40px 105px 80px 105px;
+  max-width: 100%;
+  width: calc(100% - 210px);
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .analytics {
+    margin: 32px 40px 40px 40px;
+    width: calc(100% - 80px);
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .analytics {
+    margin: 15px 16px 24px 16px;
+    width: calc(100% - 32px);
+  }
+}

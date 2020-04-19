@@ -10,6 +10,11 @@
 }
 @media (min-width: 768px) and (max-width: 1440px) {
   .navigation__menu {
-    padding: 0 3.5em 0 0;
+    padding: 0 40px 0 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation__menu {
+    padding: 0 16px 0 0;
   }
 }

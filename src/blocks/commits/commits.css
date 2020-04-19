@@ -1,0 +1,15 @@
+@import url(__block/commtits__block.css);
+@import url(__link/commits__link.css);
+@import url(__title/commits__title.css);
+
+.commits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  padding: 80px 105px 80px 105px;
+  max-width: 100%;
+  width: calc(100% - 210px);
+  background: #F5F6F7;
+}

@@ -3,3 +3,10 @@
   display: flex;
   flex-direction: row;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__icons {
+    position: absolute;
+    top: 23px;
+    right: 18px;
+  }
+}

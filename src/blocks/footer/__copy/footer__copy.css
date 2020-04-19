@@ -6,3 +6,8 @@
   line-height: 22px;
   color: #b6bcbf;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__copy {
+    order: 1;
+  }
+}

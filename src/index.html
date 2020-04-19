@@ -20,7 +20,6 @@
       href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
     />
   </head>
-
   <body>
     <div class="page">
       <header class="header header_bg_pic">
@@ -36,7 +35,7 @@
             </li>
             <li class="navigation__text">
               <a
-                href="./about/about.html"
+                href="./about.html"
                 class="navigation__link navigation__link_nonactive"
                 >О проекте</a
               >
@@ -60,11 +59,11 @@
         </div>
       </header>
       <main class="content">
-        <div class="content__loading">
+        <section class="content__loading hidden">
           <i class="content__circle-preloader"></i>
           <h3 class="content__loading-text">Идет поиск новостей...</h3>
-        </div>
-        <div class="content__nothing">
+        </section>
+        <section class="content__nothing hidden">
           <img
             src="<%= require('./images/nothing.png')%>"
             alt="nothing found"
@@ -74,8 +73,8 @@
           <p class="content__nothing-text">
             К сожалению по вашему запросу ничего не найдено
           </p>
-        </div>
-        <div class="content__result">
+        </section>
+        <section class="content__result">
           <div class="content__result-inf">
             <h3 class="content__result-title">Результаты поиска</h3>
             <a href="analytics.html" class="content__result-analytics"
@@ -130,8 +129,8 @@
             </div>
           </div>
           <button class="content__button">Показать еще</button>
-        </div>
-        <div class="about">
+        </section>
+        <section class="about">
           <img
             src="<%=require('./images/me.jpg')%>"
             alt="My photo"
@@ -150,13 +149,14 @@
               с DOM элементами страницы, умею работать с API.
             </p>
           </div>
-        </div>
+        </section>
+      
       </main>
       <footer class="footer">
         <span class="footer__copy">&#169; 2019 Supersite</span>
         <ul class="footer__nav">
           <li class="footer__point"><a href="./index.html">Главная</a></li>
-          <li class="footer__point"><a href="./about/about.html">О проекте</a></li>
+          <li class="footer__point"><a href="./about.html">О проекте</a></li>
           <li class="footer__point">
             <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
           </li>
@@ -176,10 +176,10 @@
           /></a>
         </div>
       </footer>
+    </div>
       <script
         type="module"
         src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"
       ></script>
-    </div>
   </body>
 </html>

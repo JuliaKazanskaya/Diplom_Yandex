@@ -1,0 +1,14 @@
+.diagram__table-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.diagram__table-col:first-of-type .diagram__table-cell {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #1a1b22;
+  width: 104px;
+}

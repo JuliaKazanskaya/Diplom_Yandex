@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Болелова Юлия" />
+    <meta
+      name="description"
+      content="Сервис поиска новостей по заданной тематике за последнюю неделю с просмотром аналитики."
+    />
+    <title>NewsAnalyzer: Аналитика</title>
+    <link
+      rel="shortcut icon"
+      href="<%= require('./images/favicon.png')%>"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.analytics.css %>"
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <nav class="navigation navigation_color_black">
+          <h4 class="navigation__title">NewsAnalyzer</h4>
+          <ul class="navigation__menu">
+            <li class="navigation__text">
+              <a
+                href="./index.html"
+                class="navigation__link navigation__link_nonactive"
+                >Главная</a
+              >
+            </li>
+            <li class="navigation__text">
+              <a
+                href="./about.html"
+                class="navigation__link navigation__link_nonactive"
+                >О проекте</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="content">
+        <section class="analytics">
+          <h5 class="analytics__text">
+            <span class="analytics_color_black">Главная</span> / Аналитика
+          </h5>
+          <h3 class="about__title">
+            Вы спросили: "<span class="teg__name">Путешествия</span>"
+          </h3>
+          <h5 class="about__text analytics__text-news">
+            Новостей за неделю: <span>34 324</span>
+          </h5>
+          <h5 class="about__text analytics__text-news">
+            Упоминаний в заголовках: <span>235</span>
+          </h5>
+        </section>
+        <section class="diagram">
+          <h3 class="diagram__title">Аналитика по дням</h3>
+          <div class="diagram__title-block">
+            <h5 class="diagram__title-table">дата (август)</h5>
+            <h5 class="diagram__title-table">кол-во упоминаний</h5>
+          </div>
+          <div class="diagram__table-size">
+            <span>0</span>
+            <span>25</span>
+            <span>50</span>
+            <span>75</span>
+            <span>100</span>
+          </div>
+          <div class="diagram__table">
+
+            <div class="diagram__table-col">
+              <p class="diagram__table-cell">13, пн</p>
+              <p class="diagram__table-cell">14, вт</p>
+              <p class="diagram__table-cell">15, ср</p>
+              <p class="diagram__table-cell">16, чт</p>
+              <p class="diagram__table-cell">17, пт</p>
+              <p class="diagram__table-cell">18, сб</p>
+              <p class="diagram__table-cell">19, вс</p>
+            </div>
+            <div class="diagram__table-col">
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">10</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">20</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">30</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">50</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">70</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">90</p>
+              </div>
+              <div class="diagram__table-block">
+                <p class="diagram__table-cell">100</p>
+              </div>
+            </div>
+          </div>
+          <div class="diagram__table-size">
+            <span>0</span>
+            <span>25</span>
+            <span>50</span>
+            <span>75</span>
+            <span>100</span>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <span class="footer__copy">&#169; 2019 Supersite</span>
+        <ul class="footer__nav">
+          <li class="footer__point"><a href="./index.html">Главная</a></li>
+          <li class="footer__point"><a href="./about.html">О проекте</a></li>
+          <li class="footer__point">
+            <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+          </li>
+        </ul>
+        <div class="footer__icons">
+          <a href="https://github.com/JuliaBolelova/" class="footer__icon"
+            ><img
+              src="<%=require('./images/github.png')%>"
+              alt="github"
+              class="footer__img"
+          /></a>
+
+          <a href="https://facebook.com" class="footer__icon"
+            ><img
+              src="<%=require('./images/facebook.png')%>"
+              alt="facebook"
+              class="footer__img"
+          /></a>
+        </div>
+      </footer>
+    </div>
+    <script
+      type="module"
+      src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"
+    ></script>
+  </body>
+</html>

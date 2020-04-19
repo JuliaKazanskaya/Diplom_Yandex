@@ -1,0 +1,15 @@
+.commits__link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #1a1b22;
+  text-decoration: none;
+}
+.commits__link:visited{
+    color: #1a1b22;
+}

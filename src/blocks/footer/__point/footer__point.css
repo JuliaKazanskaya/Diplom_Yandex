@@ -16,3 +16,8 @@
   font-size: 1em;
   line-height: 24px;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__point {
+    margin: 0 0 25px 0; 
+  }
+}

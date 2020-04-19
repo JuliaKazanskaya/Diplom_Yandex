@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    main: './src/index/index.js',
+    main: './src/index.js',
     about: './src/about/about.js',
     analytics: './src/analytics/analytics.js'
   },
@@ -88,13 +88,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/about.html',
-      filename: 'about.html'
+      template: './src/about/about.html',
+      filename: 'about/about.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/analytics.html',
-      filename: 'analytics.html'
+      template: './src/analytics/analytics.html',
+      filename: '/analytics/analytics.html'
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
@@ -108,5 +108,8 @@ module.exports = {
       },
       canPrint: true
     }),
+    new CopyWebpackPlugin([
+      {from: 'src/images', to: 'images'},
+    ]),
   ]
 };

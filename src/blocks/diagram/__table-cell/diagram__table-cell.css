@@ -1,0 +1,8 @@
+.diagram__table-cell {
+  margin: 0 0 60px 0;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .diagram__table-cell {
+    margin: 0 0 26px 0;
+  }
+}
