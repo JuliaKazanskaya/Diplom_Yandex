@@ -1,0 +1,12 @@
+.commits__who-pic {
+  grid-area: pic;
+  height: 64px;
+  width: 64px;
+  border-radius: 1000px;
+}
+@media (min-width: 320px) and (max-width: 1439px) {
+  .commits__who-pic {
+    width: 48px;
+    height: 48px;
+  }
+}

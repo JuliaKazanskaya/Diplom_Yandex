@@ -4,3 +4,18 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+@media (min-width: 768px) and (max-width: 1439px) {
+    .tech__icons {
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .tech__icons {
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+  }

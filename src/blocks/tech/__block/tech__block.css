@@ -8,3 +8,8 @@
 .tech__block:last-of-type{
     margin: 0;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+    .tech__block {
+        margin: 0 0 45px 0;
+    }
+  }

@@ -6,7 +6,9 @@
 }
 .navigation_color_black .navigation__link_nonactive:hover {
     color: #000;
+    transition: 2s;
 }
 .navigation_color_white .navigation__link_nonactive:hover {
   color: #fff;
+  transition: 2s;
 }

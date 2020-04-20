@@ -11,7 +11,7 @@
 .about__text:last-of-type {
   margin: 0;
 }
-@media (min-width: 768px) and (max-width: 1440px) {
+@media (min-width: 768px) and (max-width: 1439px) {
     .about__text {
       font-size: 1.1em;
     }

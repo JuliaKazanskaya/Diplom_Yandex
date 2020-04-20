@@ -4,9 +4,16 @@
   width: 464px;
   padding: 0;
 }
-@media (min-width: 768px) and (max-width: 1440px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .about__photo {
-    height: 14.5em;
-    width: 14.5em;
+    height: 232px;
+    width: 232px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .about__photo {
+    height: 272px;
+    width: 272px;
+    margin: 0 0 35px 0;
   }
 }

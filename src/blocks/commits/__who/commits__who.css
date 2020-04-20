@@ -1,0 +1,18 @@
+.commits__who {
+  display: grid;
+  grid-template-areas:
+    " pic  title "
+    " pic subtitle ";
+  grid-template-columns: 64px calc(100% - 48px - 16px);
+  margin: 0 24px 16px 24px;
+  row-gap: 2px;
+  column-gap: 16px;
+  max-width: 100%;
+  width: 100%;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__who {
+    grid-template-columns: 48px calc(100% - 48px - 16px);
+    margin: 0 16px 10px 16px;
+  }
+}

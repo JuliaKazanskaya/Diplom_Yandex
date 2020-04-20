@@ -7,5 +7,20 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
-  margin: 10px 24px 24px 24px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  margin: 0;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .card__author {
+    bottom: 16px;
+    left: 16px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .card__author {
+    bottom: 16px;
+    left: 16px;
+  }
 }

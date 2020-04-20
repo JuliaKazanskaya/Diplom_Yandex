@@ -8,7 +8,7 @@
   padding: 0 105px 0 0;
   height: 100%;
 }
-@media (min-width: 768px) and (max-width: 1440px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .navigation__menu {
     padding: 0 40px 0 0;
   }

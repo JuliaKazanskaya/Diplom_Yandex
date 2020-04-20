@@ -1,0 +1,18 @@
+.commits__card {
+  width: 400px;
+  height: 288px;
+  background: #fff;
+  border-radius: 16px;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .commits__card {
+    width: 336px;
+    height: 242px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__card {
+    width: 288px;
+    height: 264px;
+  }
+}

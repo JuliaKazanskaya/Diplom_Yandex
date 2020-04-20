@@ -16,3 +16,21 @@
   margin: 64px 0 0 0;
   padding: 0 84px 0 84px;
 }
+.content__button:hover{
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 2s; 
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .content__button {
+    margin: 34px 0 0 0;
+    width: 240px;
+    height: 56px;
+    padding: 0 60px 0 60px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .content__button {
+    margin: 12px 0 0 0;
+  }
+}
