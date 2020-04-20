@@ -52,9 +52,9 @@
             <input
               type="text"
               class="header__field"
-              placeholder="Введите тему новости"
+              placeholder="Введите тему новости" required minlength="2" 
             />
-            <button class="header__button">Искать</button>
+            <button class="header__button" type="submit">Искать</button>
           </form>
         </div>
       </header>
@@ -128,7 +128,7 @@
               <h5 class="card__author">Лента.ру</h5>
             </div>
           </div>
-          <button class="content__button">Показать еще</button>
+          <button class="content__button" type="button">Показать еще</button>
         </section>
         <section class="about">
           <img
@@ -150,7 +150,6 @@
             </p>
           </div>
         </section>
-      
       </main>
       <footer class="footer">
         <span class="footer__copy">&#169; 2019 Supersite</span>
@@ -162,13 +161,16 @@
           </li>
         </ul>
         <div class="footer__icons">
-          <a href="https://github.com/JuliaBolelova/" class="footer__icon"
+          <a
+            target="_blank"
+            href="https://github.com/JuliaBolelova/"
+            class="footer__icon"
             ><img
               src="./images/github.png"
               alt="github"
               class="footer__img"
           /></a>
-          <a href="https://facebook.com" class="footer__icon"
+          <a target="_blank" href="https://facebook.com" class="footer__icon"
             ><img
               src="./images/facebook.png"
               alt="facebook"
@@ -177,9 +179,9 @@
         </div>
       </footer>
     </div>
-      <script
-        type="module"
-        src="main/main.19a631517f6d367c6073.js"
-      ></script>
+    <script
+      type="module"
+      src="main/main.19a631517f6d367c6073.js"
+    ></script>
   </body>
 </html>
