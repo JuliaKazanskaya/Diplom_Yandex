@@ -1,4 +1,4 @@
-# Дипломная работа https://juliabolelova.github.io/Diplom_Yandex/
+# Дипломная работа [NewsAnalyzer](https://juliabolelova.github.io/Diplom_Yandex/)
 
 Сервис поиска новостей по тегу. Анализирует выдачу и составляет диаграмму популярности за последнюю неделю.
 
@@ -39,4 +39,4 @@
 `npm run deploy`
 
 # Версия 
-0.1.0
+0.1.1
