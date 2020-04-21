@@ -17,15 +17,16 @@
     />
     <link
       rel="stylesheet"
-      href="about/about.e958bac128b2f3c201c5.css"
+      href="about/about.4a77bb7e30574747159b.css"
     />
   </head>
 
   <body>
     <div class="page">
       <header class="header">
+        <div class="wrapper">
         <nav class="navigation navigation_color_black">
-          <h4 class="navigation__title">NewsAnalyzer</h4>
+          <a class="navigation__title" href="./index.html">NewsAnalyzer</a>
           <ul class="navigation__menu">
             <li class="navigation__text">
               <a
@@ -43,10 +44,11 @@
             </li>
           </ul>
         </nav>
+      </div>
       </header>
       <main class="content">
-        <section class="clients">
-          <h3 class="about__title">Клиентам</h3>
+        <section class="about clients">          
+          <h3 class="about__title clients__title">Клиентам</h3>
           <p class="about__text clients__text">
             Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель —
             показать, чему научился студент, какими технологиями владеет.
@@ -74,7 +76,9 @@
             Проект был проверен экспертами Яндекс.Практикума. Если вашему
             бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.
           </p>
+        
         </section>
+
         <section class="tech">
           <h4 class="tech__title">Используемые технологии</h4>
           <div class="tech__icons">
@@ -99,32 +103,36 @@
         <section class="about">
           <img
             src="./images/me.jpg"
-            alt="My photo"
+            alt="Моя фотография"
             class="about__photo"
           />
           <div class="about__paragraph">
             <h3 class="about__title">Об авторе</h3>
             <p class="about__text">
-              Меня зовут Болелова Юлия и я frontend разработчик. В ходе обучения
-              на Яндекс.Практикуме мною были освоены технологии HTML5, CSS3 и
-              JavaScript ES6, GIT и WebPack.
+              Меня зовут Болелова Юлия и я frontend разработчик. В ходе
+              обучения на Яндекс.Практикуме мною были освоены технологии
+              HTML5, CSS3 и JavaScript ES6, GIT и WebPack.
             </p>
             <p class="about__text">
               Умею работать с семантическими тегами HTML. Верстать адаптивно и
-              валидною. Использую методогию БЭМ. Относительно JS взаимодействую
-              с DOM элементами страницы, умею работать с API.
+              валидною. Использую методогию БЭМ. Относительно JS
+              взаимодействую с DOM элементами страницы, умею работать с API.
             </p>
           </div>
-        </section>
+      </section>
         <section class="commits">
-          <div class="commtits__block">
+          <div class="commits__block">
             <h3 class="commits__title">История коммитов из GitHub</h3>
             <a
               target="_blank"
               href="https://github.com/JuliaBolelova/Diplom_Yandex/commits/level-1"
               class="commits__link"
-              >Открыть в GitHub ></a
-            >
+              >Открыть в GitHub
+              <img
+                src="./images/arrow.svg"
+                alt="Стрелочка"
+                class="arrow"
+            /></a>
           </div>
           <div class="commits__cards">
             <div class="commits__card">
@@ -132,11 +140,15 @@
               <div class="commits__who">
                 <img
                   src="./images/me.jpg"
-                  alt="photo"
+                  alt="Фото с гитхаба"
                   class="commits__who-pic"
                 />
                 <h4 class="commits__who-title">Юлия Болелова</h4>
-                <h6 class="commits__who-subtitle">forgetmenot8@yandex.ru</h6>
+                <a
+                  href="mailto:forgetmenot8@yandex.ru"
+                  class="commits__who-subtitle"
+                  >forgetmenot8@yandex.ru</a
+                >
               </div>
               <p class="commits__card-text">
                 Emmet (formerly Zen Coding) is a web- developer’s toolkit that
@@ -148,11 +160,35 @@
               <div class="commits__who">
                 <img
                   src="./images/me.jpg"
-                  alt="photo"
+                  alt="Фото с гитхаба"
                   class="commits__who-pic"
                 />
                 <h4 class="commits__who-title">Юлия Болелова</h4>
-                <h6 class="commits__who-subtitle">forgetmenot8@yandex.ru</h6>
+                <a
+                  href="mailto:forgetmenot8@yandex.ru"
+                  class="commits__who-subtitle"
+                  >forgetmenot8@yandex.ru</a
+                >
+              </div>
+              <p class="commits__card-text">
+                Emmet (formerly Zen Coding) is a web- developer’s toolkit that
+                can greatly improve your HTML & CSS workflow.
+              </p>
+            </div>
+            <div class="commits__card">
+              <h5 class="commits__card-date">14 августа, 2019</h5>
+              <div class="commits__who">
+                <img
+                  src="./images/me.jpg"
+                  alt="Фото с гитхаба"
+                  class="commits__who-pic"
+                />
+                <h4 class="commits__who-title">Юлия Болелова</h4>
+                <a
+                  class="commits__who-subtitle"
+                  href="mailto:forgetmenot8@yandex.ru"
+                  >forgetmenot8@yandex.ru</a
+                >
               </div>
               <p class="commits__card-text">
                 Emmet (formerly Zen Coding) is a web- developer’s toolkit that
@@ -160,6 +196,11 @@
               </p>
             </div>
           </div>
+          <img
+            src="./images/slider.png"
+            alt="Слайдер"
+            class="slider"
+          />
           <a
             target="_blank"
             class="commits__button"
@@ -168,34 +209,40 @@
           >
         </section>
       </main>
-      <footer class="footer">
-        <span class="footer__copy">&#169; 2019 Supersite</span>
-        <ul class="footer__nav">
-          <li class="footer__point"><a href="./index.html">Главная</a></li>
-          <li class="footer__point"><a href="./about.html">О проекте</a></li>
-          <li class="footer__point">
-            <a target="_blank" href="https://praktikum.yandex.ru/"
-              >Яндекс.Практикум</a
-            >
-          </li>
-        </ul>
-        <div class="footer__icons">
-          <a
-            target="_blank"
-            href="https://github.com/JuliaBolelova/"
-            class="footer__icon"
-            ><img
-              src="./images/github.png"
-              alt="github"
-              class="footer__img"
-          /></a>
-
-          <a href="https://facebook.com" class="footer__icon"
-            ><img
-              src="./images/facebook.png"
-              alt="facebook"
-              class="footer__img"
-          /></a>
+      <footer>
+        <div class="wrapper">
+          <div class="footer">
+            <p class="footer__copy">&#169; 2019 Supersite</p>
+            <ul class="footer__nav">
+              <li class="footer__point"><a href="./index.html">Главная</a></li>
+              <li class="footer__point">
+                <a href="./about.html">О проекте</a>
+              </li>
+              <li class="footer__point">
+                <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+              </li>
+            </ul>
+            <div class="footer__icons">
+              <a
+                target="_blank"
+                href="https://github.com/JuliaBolelova/"
+                class="footer__icon"
+                ><img
+                  src="./images/github.png"
+                  alt="github"
+                  class="footer__img"
+              /></a>
+              <a
+                target="_blank"
+                href="https://facebook.com"
+                class="footer__icon"
+                ><img
+                  src="./images/facebook.png"
+                  alt="facebook"
+                  class="footer__img"
+              /></a>
+            </div>
+          </div>
         </div>
       </footer>
       <script
