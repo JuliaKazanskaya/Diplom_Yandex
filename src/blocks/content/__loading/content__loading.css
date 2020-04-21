@@ -11,3 +11,16 @@
   width: 100%;
   min-width: 320px;
 }
+.content__loading::before {
+  content: "";
+  background-color: #f5f6f7;
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
