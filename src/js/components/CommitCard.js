@@ -11,7 +11,7 @@ export class CommitCard {
     //Создание карточки
     create(url, date, title, text, subtitle) {
         return `<div class="commits__card">
-                    <h5 class="commits__card-date">${date}</h5>
+                    <time class="commits__card-date">${date}</time>
                     <div class="commits__who">
                     <img
                         src="${url}"
@@ -19,6 +19,11 @@ export class CommitCard {
                         class="commits__who-pic"
                     />
                     <h4 class="commits__who-title">${title}</h4>
+                    <a
+                    class="commits__who-subtitle"
+                    href="mailto:${subtitle}"
+                    >${subtitle}</a
+                  >
                     <h6 class="commits__who-subtitle">${subtitle}</h6>
                     </div>
                     <p class="commits__card-text">${text}</p>

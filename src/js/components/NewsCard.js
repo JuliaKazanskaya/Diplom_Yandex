@@ -10,16 +10,16 @@ export class NewsCard {
     }
     //Создание карточки
     create(url, date, title, text, author) {
-        return `<div class="card">
+        return `<article class="card">
                     <img
                         src="${url}"
-                        alt="card"
+                        alt="Фото статьи"
                         class="card__img"
                     />
-                    <h6 class="card__date">${date}</h6>
+                    <time class="card__date">${date}</time>
                     <h4 class="card__title">${title}</h4>
                     <p class="card__text">${text}</p>
-                    <h5 class="card__author">${author}</h5>
-                </div>`
+                    <p class="card__author">${author}</p>
+              </article>`
     }
 }
