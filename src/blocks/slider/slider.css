@@ -1,0 +1,16 @@
+.slider{
+    display: block;
+    margin: 48px 43% 0 43%;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+    .slider {
+      
+        margin: 32px 43% 0 43%;
+      }
+  }
+@media (min-width: 320px) and (max-width: 767px) {
+    .slider {
+      
+      margin: 16px 43% 0 43%;
+    }
+  }

@@ -1,22 +1,22 @@
-.commtits__block {
+.commits__block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 0;
   width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1439px) {
-  .commtits__block {
+  .commits__block {
     justify-content: space-between;
     align-items: baseline;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .commtits__block {
+  .commits__block {
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    max-width: 200px;
+    align-items: flex-start;
+    width: 100%;
   }
 }

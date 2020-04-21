@@ -2,7 +2,6 @@
 @import url(__loading-text/content__loading-text.css);
 @import url(__loading/content__loading.css);
 @import url(__nothing/content__nothing.css);
-@import url(__nothing-pic/content__nothing-pic.css);
 @import url(__nothing-text/content__nothing-text.css);
 @import url(__nothing-title/content__nothing-title.css);
 @import url(__result/content__result.css);
@@ -19,5 +18,5 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
+  max-width: 1440px;
 }

@@ -6,6 +6,7 @@
   padding: 20px 0 15px 0;
   border-bottom: 1px solid #1A1B22;
   width: 100%;
+  max-width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .diagram__title-block {
@@ -14,8 +15,8 @@
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .diagram__title-block {
-    grid-template-columns: 30px calc(100% - 16px);
-    column-gap: 50px;
+    grid-template-columns: 30px 200px;
+    column-gap: 70px; 
     padding: 0 0 10px 0;
   }
 }

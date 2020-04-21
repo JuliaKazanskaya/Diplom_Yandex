@@ -21,54 +21,55 @@
     />
   </head>
   <body>
-    <div class="page">
       <header class="header header_bg_pic">
-        <nav class="navigation navigation_color_white">
-          <h4 class="navigation__title">NewsAnalyzer</h4>
-          <ul class="navigation__menu">
-            <li class="navigation__text">
-              <a
-                href="./index.html"
-                class="navigation__link navigation__link_active"
-                >Главная</a
-              >
-            </li>
-            <li class="navigation__text">
-              <a
-                href="./about.html"
-                class="navigation__link navigation__link_nonactive"
-                >О проекте</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <div class="header__main">
-          <h1 class="header__title">Что в мире<br />творится?</h1>
-          <h3 class="header__subtitle">
-            Введите в поиске любую тему и узнайте, насколько популярной она была
-            в новостях за прошлую неделю.
-          </h3>
-          <form class="header__search" name="search">
-            <input
-              type="text"
-              class="header__field"
-              placeholder="Введите тему новости" required minlength="2" 
-            />
-            <button class="header__button" type="submit">Искать</button>
-          </form>
+        <div class="wrapper">
+          <nav class="navigation navigation_color_white">
+            <a class="navigation__title" href="./index.html">NewsAnalyzer</a>
+            <ul class="navigation__menu">
+              <li class="navigation__text">
+                <a
+                  href="./index.html"
+                  class="navigation__link navigation__link_active"
+                  >Главная</a
+                >
+              </li>
+              <li class="navigation__text">
+                <a
+                  href="./about.html"
+                  class="navigation__link navigation__link_nonactive"
+                  >О проекте</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header__main">
+            <h1 class="header__title">Что в мире<br />творится?</h1>
+            <h3 class="header__subtitle">
+              Введите в поиске любую тему и узнайте, насколько популярной она
+              была в новостях за прошлую неделю.
+            </h3>
+            <form class="header__search" name="search">
+              <input
+                type="text"
+                class="header__field"
+                placeholder="Введите тему новости"
+                required
+                minlength="2"
+              />
+              <button class="header__button" type="submit">Искать</button>
+            </form>
+          </div>
         </div>
-      </header>
+      </header>    
+      <div class="page">
       <main class="content">
-        <section class="content__loading hidden">
-          <i class="content__circle-preloader"></i>
-          <h3 class="content__loading-text">Идет поиск новостей...</h3>
-        </section>
+        <div class="wrapper wrapper_color_grey">
+          <section class="content__loading hidden">
+            <i class="content__circle-preloader"></i>
+            <h3 class="content__loading-text">Идет поиск новостей...</h3>
+          </section>
+        </div>
         <section class="content__nothing hidden">
-          <img
-            src="<%= require('./images/nothing.png')%>"
-            alt="nothing found"
-            class="content__nothing-pic"
-          />
           <h3 class="content__nothing-title">Ничего не найдено</h3>
           <p class="content__nothing-text">
             К сожалению по вашему запросу ничего не найдено
@@ -78,104 +79,119 @@
           <div class="content__result-inf">
             <h3 class="content__result-title">Результаты поиска</h3>
             <a href="analytics.html" class="content__result-analytics"
-              >Посмотреть аналитику ></a
-            >
+              >Посмотреть аналитику<img
+                src="<%= require('./images/arrow.svg')%>"
+                alt="Стрелочка"
+                class="arrow"
+            /></a>
           </div>
           <div class="cards">
-            <div class="card">
+            <article class="card">
               <img
                 src="<%= require('./images/example.jpg')%>"
-                alt="card"
+                alt="Фото статьи"
                 class="card__img"
               />
-              <h6 class="card__date">2 августа, 2019</h6>
+              <time class="card__date">2 августа, 2019</time>
+              <h4 class="card__title">«Первозданная тайга»</h4>
+              <p class="card__text">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <p class="card__author">Лента.ру</p>
+            </article>
+            <article class="card">
+              <img
+                src="<%= require('./images/example.jpg')%>"
+                alt="Фото статьи"
+                class="card__img"
+              />
+              <time class="card__date">2 августа, 2019</time>
+              <h4 class="card__title">
+                Национальное достояние – парки
+              </h4>
+              <p class="card__text">
+                Знаменитый фотограф снимает первозданные леса России, чтобы
+                рассказать о необходимости их сохранения. В этот раз он
+                отправился в Двинско-Пинежскую тайгу, где он бывал и что при
+                этом могу видеть и чувствовать.
+              </p>
+              <p class="card__author">Лента.ру</p>
+            </article>
+            <article class="card">
+              <img
+                src="<%= require('./images/example.jpg')%>"
+                alt="Фото статьи"
+                class="card__img"
+              />
+              <time class="card__date">2 августа, 2019</time>
               <h4 class="card__title">Национальное достояние – парки</h4>
               <p class="card__text">
                 В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
                 начала складываться система национальных парков – охраняемых
                 территорий, где и сегодня каждый может приобщиться к природе.
               </p>
-              <h5 class="card__author">Лента.ру</h5>
-            </div>
-            <div class="card">
-              <img
-                src="<%= require('./images/example.jpg')%>"
-                alt="card"
-                class="card__img"
-              />
-              <h6 class="card__date">2 августа, 2019</h6>
-              <h4 class="card__title">Национальное достояние – парки</h4>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h5 class="card__author">Лента.ру</h5>
-            </div>
-            <div class="card">
-              <img
-                src="<%= require('./images/example.jpg')%>"
-                alt="card"
-                class="card__img"
-              />
-              <h6 class="card__date">2 августа, 2019</h6>
-              <h4 class="card__title">Национальное достояние – парки</h4>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h5 class="card__author">Лента.ру</h5>
-            </div>
+              <p class="card__author">Лента.ру</p>
+            </article>
           </div>
           <button class="content__button" type="button">Показать еще</button>
         </section>
         <section class="about">
-          <img
-            src="<%=require('./images/me.jpg')%>"
-            alt="My photo"
-            class="about__photo"
-          />
-          <div class="about__paragraph">
-            <h3 class="about__title">Об авторе</h3>
-            <p class="about__text">
-              Меня зовут Болелова Юлия и я frontend разработчик. В ходе обучения
-              на Яндекс.Практикуме мною были освоены технологии HTML5, CSS3 и
-              JavaScript ES6, GIT и WebPack.
-            </p>
-            <p class="about__text">
-              Умею работать с семантическими тегами HTML. Верстать адаптивно и
-              валидною. Использую методогию БЭМ. Относительно JS взаимодействую
-              с DOM элементами страницы, умею работать с API.
-            </p>
-          </div>
+            <img
+              src="<%=require('./images/me.jpg')%>"
+              alt="Моя фотография"
+              class="about__photo"
+            />
+            <div class="about__paragraph">
+              <h3 class="about__title">Об авторе</h3>
+              <p class="about__text">
+                Меня зовут Болелова Юлия и я frontend разработчик. В ходе
+                обучения на Яндекс.Практикуме мною были освоены технологии
+                HTML5, CSS3 и JavaScript ES6, GIT и WebPack.
+              </p>
+              <p class="about__text">
+                Умею работать с семантическими тегами HTML. Верстать адаптивно и
+                валидною. Использую методогию БЭМ. Относительно JS
+                взаимодействую с DOM элементами страницы, умею работать с API.
+              </p>
+            </div>
         </section>
       </main>
-      <footer class="footer">
-        <span class="footer__copy">&#169; 2019 Supersite</span>
-        <ul class="footer__nav">
-          <li class="footer__point"><a href="./index.html">Главная</a></li>
-          <li class="footer__point"><a href="./about.html">О проекте</a></li>
-          <li class="footer__point">
-            <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-          </li>
-        </ul>
-        <div class="footer__icons">
-          <a
-            target="_blank"
-            href="https://github.com/JuliaBolelova/"
-            class="footer__icon"
-            ><img
-              src="<%=require('./images/github.png')%>"
-              alt="github"
-              class="footer__img"
-          /></a>
-          <a target="_blank" href="https://facebook.com" class="footer__icon"
-            ><img
-              src="<%=require('./images/facebook.png')%>"
-              alt="facebook"
-              class="footer__img"
-          /></a>
+      <footer>
+        <div class="wrapper">
+          <div class="footer">
+            <p class="footer__copy">&#169; 2019 Supersite</p>
+            <ul class="footer__nav">
+              <li class="footer__point"><a href="./index.html">Главная</a></li>
+              <li class="footer__point">
+                <a href="./about.html">О проекте</a>
+              </li>
+              <li class="footer__point">
+                <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+              </li>
+            </ul>
+            <div class="footer__icons">
+              <a
+                target="_blank"
+                href="https://github.com/JuliaBolelova/"
+                class="footer__icon"
+                ><img
+                  src="<%=require('./images/github.png')%>"
+                  alt="github"
+                  class="footer__img"
+              /></a>
+              <a
+                target="_blank"
+                href="https://facebook.com"
+                class="footer__icon"
+                ><img
+                  src="<%=require('./images/facebook.png')%>"
+                  alt="facebook"
+                  class="footer__img"
+              /></a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

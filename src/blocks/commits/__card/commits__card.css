@@ -9,9 +9,16 @@
     width: 336px;
     height: 242px;
   }
+  .commits__card:last-of-type{
+    display: none;
+  }
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .commits__card {
+  .commits__card{
+    display: none;
+  }
+  .commits__card:first-of-type {
+    display: block;
     width: 288px;
     height: 264px;
   }

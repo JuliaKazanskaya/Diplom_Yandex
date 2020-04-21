@@ -5,7 +5,7 @@
   width: 100%;
 }
 .diagram__table-block .diagram__table-cell {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -18,7 +18,7 @@
   width: 20vw;
   background: #2f71e5;
   padding: 2.5px 0 2px 6px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
