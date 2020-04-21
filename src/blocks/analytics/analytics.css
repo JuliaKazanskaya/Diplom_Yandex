@@ -1,6 +1,6 @@
-@import url(_color/analytics_color_black.css);
 @import url(__text/analytics__text.css);
 @import url(__text-news/analytics__text-news.css);
+@import url(__title/analytics__title.css);
 
 .analytics {
   display: flex;

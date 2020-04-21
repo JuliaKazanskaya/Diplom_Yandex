@@ -1,22 +1,26 @@
 .card__text {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
   color: #1a1b22;
   margin: 0 24px 0 24px;
-  text-overflow: ellipsis;
-  max-height: 88px;
+  text-overflow: ellipsis; 
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .card__text {
     margin: 0 16px 0 16px;
+    -webkit-line-clamp: 4;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .card__text {
     margin: 8px 16px 0 16px;
+    -webkit-line-clamp: 4;
   }
 }

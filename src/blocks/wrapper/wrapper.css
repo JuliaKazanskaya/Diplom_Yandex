@@ -1,0 +1,10 @@
+@import url(_color_grey/wrapper_color_grey.css);
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

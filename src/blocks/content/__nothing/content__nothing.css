@@ -6,4 +6,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(../../../images/nothing.png);
+  background-repeat: no-repeat;
+  background-position-y: 40px;
+  background-size: 96px auto;
+  background-position-x: center;
+  max-width: 1440px;
+  width: 100%;
+  min-width: 320px;
 }

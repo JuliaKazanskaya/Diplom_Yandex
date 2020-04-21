@@ -1,5 +1,5 @@
 .commits__link {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -9,6 +9,7 @@
   text-align: right;
   color: #1a1b22;
   text-decoration: none;
+  margin: 5px 5px 0 0;
 }
 .commits__link:visited{
     color: #1a1b22;

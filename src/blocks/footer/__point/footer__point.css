@@ -1,8 +1,8 @@
 .footer__point {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.1em;
+  font-size: 18px;
   line-height: 24px;
   margin: 0 2.5em 0 0; 
 }
@@ -10,11 +10,16 @@
 .footer__point a {
   color: #1a1b22;
   text-decoration: none;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 18px;
   line-height: 24px;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .footer__point {
+    margin: 0 20px 0  0; 
+  }
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .footer__point {

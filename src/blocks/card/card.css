@@ -25,6 +25,11 @@
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .card {
-    height: 446px;
+    display: none;
+    height: 446px; 
+  }
+  .card:first-of-type{
+    display: flex;
+    height: 420px;
   }
 }

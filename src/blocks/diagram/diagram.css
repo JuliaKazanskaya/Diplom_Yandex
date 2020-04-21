@@ -17,6 +17,7 @@
   padding: 55px 105px 80px 105px;
   max-width: 100%;
   width: calc(100% - 210px);
+  position: relative;
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .diagram {
@@ -29,4 +30,17 @@
         padding: 5px 16px 20px 16px;
         width: calc(100% - 32px);
       }
+  }
+  .diagram::before {
+    content: "";
+    background-color: #f5f6f7;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }

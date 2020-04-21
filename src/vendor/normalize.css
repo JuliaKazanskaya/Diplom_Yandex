@@ -28,8 +28,17 @@ body {
  * Render the `main` element consistently in IE.
  */
 
-main {
+main{
   display: block;
+  width: 100%;
+}
+footer {
+  display: block;
+  width: 100%;
+}
+header{
+  display: block;
+  width: 100%;
 }
 
 /**

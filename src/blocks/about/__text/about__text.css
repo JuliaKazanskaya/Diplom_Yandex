@@ -1,5 +1,5 @@
 .about__text {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -11,8 +11,3 @@
 .about__text:last-of-type {
   margin: 0;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
-    .about__text {
-      font-size: 1.1em;
-    }
-  }

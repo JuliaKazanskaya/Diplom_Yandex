@@ -1,11 +1,17 @@
+@import url(_color/analytics__text_color_black.css);
+
 .analytics__text {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
   margin: 0 0 80px 0;
+  text-decoration: none;
+}
+.analytics__text:visited {
+  color: #b6bcbf;
 }
 @media (min-width: 768px) and (max-width: 1439px) {
   .analytics__text {
