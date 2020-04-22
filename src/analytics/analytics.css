@@ -9,6 +9,7 @@
 @import url(../blocks/analytics/analytics.css);
 @import url(../blocks/diagram/diagram.css);
 @import url(../blocks/wrapper/wrapper.css);
+@import url(../blocks/breadcrumbs/breadcrumbs.css);
 @import url(../blocks/hidden/hidden.css);
 
 body {
