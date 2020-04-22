@@ -7,6 +7,7 @@
   color: #b6bcbf;
   padding: 30px 24px 16px 24px;
   margin: 0;
+  display: block;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .commits__card-date {
