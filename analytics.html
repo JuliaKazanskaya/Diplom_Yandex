@@ -17,48 +17,53 @@
     />
     <link
       rel="stylesheet"
-      href="analytics/analytics.19a7e2d76c7aa21c96ec.css"
+      href="analytics/analytics.4bb8603e7a21dc400643.css"
     />
   </head>
 
   <body>
     <div class="page">
       <header class="header">
-        <div class="wrapper">
-        <nav class="navigation navigation_color_black">
-          <a class="navigation__title" href="./index.html">NewsAnalyzer</a>
-          <ul class="navigation__menu">
-            <li class="navigation__text">
-              <a
-                href="./index.html"
-                class="navigation__link navigation__link_nonactive"
-                >Главная</a
-              >
-            </li>
-            <li class="navigation__text">
-              <a
-                href="./about.html"
-                class="navigation__link navigation__link_nonactive"
-                >О проекте</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-      </header>
+        <div class="wrapper wrapper_line_black">
+          <nav class="navigation navigation_color_black">
+            <a class="navigation__title" href="./index.html">NewsAnalyzer</a>
+            <ul class="navigation__menu">
+              <li class="navigation__text">
+                <a
+                  href="./index.html"
+                  class="navigation__link navigation__link_nonactive"
+                  >Главная</a
+                >
+              </li>
+              <li class="navigation__text">
+                <a
+                  href="./about.html"
+                  class="navigation__link navigation__link_nonactive"
+                  >О проекте</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header> 
       <main class="content">
         <section class="analytics">
-          <a class="analytics__text" href="./index.html">
-            <span class="analytics__text_color_black">Главная</span> / Аналитика
-          </a>
+          <ul class="breadcrumbs">
+            <li>
+              <a class="analytics__text" href="./index.html">
+                <span class="analytics__text_color_black">Главная</span> /
+                Аналитика
+              </a>
+            </li>
+          </ul>
           <h3 class="analytics__title">
-            Вы спросили: «<span class="teg__name">Путешествия</span>»
+            Вы спросили: «<span name="teg__name">Путешествия</span>»
           </h3>
           <p class="analytics__text-news">
-            Новостей за неделю: <span>34 324</span>
+            Новостей за неделю: <span name="teg__week">34 324</span>
           </p>
           <p class="analytics__text-news">
-            Упоминаний в заголовках: <span>235</span>
+            Упоминаний в заголовках: <span name="teg__title">235</span>
           </p>
         </section>
         <section class="diagram">
@@ -130,7 +135,8 @@
                 <a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
               </li>
             </ul>
-            <div class="footer__icons">
+            <ul class="footer__icons">
+              <li>
               <a
                 target="_blank"
                 href="https://github.com/JuliaBolelova/"
@@ -139,7 +145,8 @@
                   src="./images/github.png"
                   alt="github"
                   class="footer__img"
-              /></a>
+              /></a></li>
+              <li>
               <a
                 target="_blank"
                 href="https://facebook.com"
@@ -149,7 +156,8 @@
                   alt="facebook"
                   class="footer__img"
               /></a>
-            </div>
+            </li>
+            </ul>
           </div>
         </div>
       </footer>
