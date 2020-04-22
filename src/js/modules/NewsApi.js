@@ -1,38 +1,17 @@
-//Подклюение к серверу
-export class NewsApi {
-    constructor(options) {
-        this.header = options.headers;
-        this.url = options.url;
-        this.token = options.headers.authorization;
+export default class NewsApi {
+    constructor(baseUrl, token) {
+        this._baseUrl = baseUrl;
+        this._token = token;
     }
-    //Получаем данные
-    getData(res) {
-        if (res.ok) {
-            return res.json();
-        }
-        else
-            return Promise.reject(`Ошибка: ${res.status}`);
-    }
-    //Получаем заголовки
-    getHeaderName() {
-        return fetch(this.url + '/users/me', {
-            headers: {
-                authorization: this.token
-            }
-        })
-            .then((res) => {
-                return this.getData(res);
-            });
-    }
-    //Получаем карточки
-    getCards() {
-        return fetch(this.url + '/cards', {
-            headers: {
-                authorization: this.token
-            }
-        })
+    getNews(from, to, query) {
+        this._url = `${this._baseUrl}q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`;
+        this.request = fetch(this._url)
             .then(res => {
-                return this.getData(res);
-            });
+                if (res.ok) {
+                    return Promise.resolve(res.json());
+                }
+                return Promise.reject(`Ошибка: ${res.status}`);
+            })
+        return this.request;
     }
 }
