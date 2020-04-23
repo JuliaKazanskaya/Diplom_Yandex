@@ -5,7 +5,7 @@
   align-items: flex-start;
 }
 .diagram__table-col:first-of-type .diagram__table-cell {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
