@@ -1,5 +1,5 @@
 .footer__point {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -10,7 +10,7 @@
 .footer__point a {
   color: #1a1b22;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;

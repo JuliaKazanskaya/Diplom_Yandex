@@ -4,7 +4,7 @@
     min-width: 320px;
     margin: 0 auto;
     color: #000;
-    font-family: "Roboto", "Roboto Slab", sans-serif;
+    font-family: "Roboto", "Roboto Slab", "Arial Black", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

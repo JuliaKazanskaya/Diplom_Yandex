@@ -2,7 +2,7 @@
 @import url(_nonactive/navigation__link_nonactive.css);
 
 .navigation__link {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
