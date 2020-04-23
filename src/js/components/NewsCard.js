@@ -9,6 +9,7 @@ export class NewsCard {
         this.create(this.url, this.date, this.title, this.text, this.author);
     }
     //Создание карточки
+    //Формат даты
     create(url, date, title, text, author) {
         return `<article class="card">
                     <img
@@ -16,7 +17,7 @@ export class NewsCard {
                         alt="Фото статьи"
                         class="card__img"
                     />
-                    <time class="card__date">${date}</time>
+                    <time class="card__date" datetime="${date}">${date}</time> 
                     <h4 class="card__title">${title}</h4>
                     <p class="card__text">${text}</p>
                     <p class="card__author">${author}</p>

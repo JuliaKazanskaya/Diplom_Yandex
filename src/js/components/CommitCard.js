@@ -9,9 +9,10 @@ export class CommitCard {
         this.create(this.url, this.date, this.title, this.text, this.subtitle);
     }
     //Создание карточки
+    //Формат даты
     create(url, date, title, text, subtitle) {
         return `<div class="commits__card">
-                    <time class="commits__card-date">${date}</time>
+                    <time class="commits__card-date" datetime="${date}">${date}</time>
                     <div class="commits__who">
                     <img
                         src="${url}"
