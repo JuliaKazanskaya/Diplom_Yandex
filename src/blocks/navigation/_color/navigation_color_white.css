@@ -1,0 +1,9 @@
+.navigation_color_white {
+  color: #fff;
+}
+.navigation_color_white:visited {
+  color: #fff;
+}
+.navigation_color_white .navigation__title:visited {
+  color: #fff;
+}

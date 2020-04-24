@@ -1,0 +1,18 @@
+.card__img {
+  width: 100%;
+  height: calc(100% / 2.12);
+  width: inherit;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+  object-fit: cover;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .card__img {
+    height: calc(100% / 2.75);
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .card__img {
+    height: calc(100% / 2.25);
+  }
+}

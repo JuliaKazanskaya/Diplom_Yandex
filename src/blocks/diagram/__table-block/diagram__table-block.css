@@ -1,0 +1,28 @@
+.diagram__table-block {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.diagram__table-block .diagram__table-cell {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 20vw;
+  background: #2f71e5;
+  padding: 2.5px 0 2px 6px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}

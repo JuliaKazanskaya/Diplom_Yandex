@@ -1,0 +1,21 @@
+.commits__link {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #1a1b22;
+  text-decoration: none;
+  margin: 5px 5px 0 0;
+}
+.commits__link:visited{
+    color: #1a1b22;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__link {
+    display: none;
+  }
+}

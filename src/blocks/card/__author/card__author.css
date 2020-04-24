@@ -1,0 +1,26 @@
+.card__author {
+  font-family: "Roboto Slab", "Arial Black", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  margin: 0;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .card__author {
+    bottom: 16px;
+    left: 16px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .card__author {
+    bottom: 16px;
+    left: 16px;
+  }
+}

@@ -1,0 +1,47 @@
+@import url(__title/tech__title.css);
+@import url(__name/tech__name.css);
+@import url(__block/tech__block.css);
+@import url(__icons/tech__icons.css);
+
+.tech {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  width: calc(100% - 210px);
+  padding: 80px 105px;
+  background: #f5f6f7;
+  position: relative;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .tech {
+    padding: 40px 40px 40px 40px;
+    width: calc(100% - 80px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .tech {
+    padding: 35px 16px 0 16px;
+    width: calc(100% - 32px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.tech::before {
+  content: "";
+  background-color: #f5f6f7;
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

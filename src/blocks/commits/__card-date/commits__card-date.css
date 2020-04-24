@@ -1,0 +1,16 @@
+.commits__card-date {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #b6bcbf;
+  padding: 30px 24px 16px 24px;
+  margin: 0;
+  display: block;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__card-date {
+    padding: 10px 16px 16px 16px;
+  }
+}

@@ -1,0 +1,14 @@
+.commits__who-subtitle {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #1a1b22;
+  grid-area: subtitle;
+  margin: 0;
+  text-decoration: none;
+}
+.commits__who-subtitle:visited {
+  color: #1a1b22;
+}

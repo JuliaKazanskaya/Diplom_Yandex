@@ -1,0 +1,22 @@
+.commits__block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .commits__block {
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__block {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+}

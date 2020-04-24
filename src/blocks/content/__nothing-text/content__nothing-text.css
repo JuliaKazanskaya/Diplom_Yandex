@@ -1,0 +1,11 @@
+.content__nothing-text {
+  max-width: 320px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  text-align: center;
+  margin: 0;
+}

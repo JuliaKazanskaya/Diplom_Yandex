@@ -1,0 +1,29 @@
+@import url(_active/navigation__link_active.css);
+@import url(_nonactive/navigation__link_nonactive.css);
+
+.navigation__link {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  display: flex;
+  height: 76px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .navigation__link {
+    height: 64px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation__link {
+    height: 56px;
+    font-size: 16px;
+   line-height: 24px;
+  }
+}

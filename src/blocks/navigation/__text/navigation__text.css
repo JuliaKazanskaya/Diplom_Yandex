@@ -1,0 +1,9 @@
+.navigation__text:first-of-type{
+    margin-right: 34px;
+    height: 100%;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    .navigation__text:first-of-type{
+        margin-right:11px;
+    }
+  }

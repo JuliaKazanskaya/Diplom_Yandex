@@ -1,0 +1,12 @@
+.navigation_color_black .navigation__link_active {
+  border-bottom: 3px solid #000;
+}
+.navigation_color_white .navigation__link_active {
+  border-bottom: 3px solid #fff;
+}
+.navigation_color_black .navigation__link_active:visited {
+    color: #000;
+  }
+  .navigation_color_white .navigation__link_active:visited {
+  color: #fff;
+  }

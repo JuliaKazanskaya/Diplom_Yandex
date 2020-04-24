@@ -1,0 +1,26 @@
+.diagram__table-size {
+  padding: 16px 10px 10px 104px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  width: calc(100% - 104px);
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+}
+.diagram__table-size:last-of-type{
+  padding: 0 10px 10px 104px;
+  margin-top: -45px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .diagram__table-size {
+    display: none;
+  }
+}

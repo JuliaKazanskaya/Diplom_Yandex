@@ -1,0 +1,23 @@
+.navigation__title {
+  margin: 0;
+  font-family: "Roboto Slab", "Arial Black", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 0 30px 0 105px;
+  text-decoration: none;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .navigation__title {
+    font-size: 20px;
+    padding: 4px 0 0 40px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .navigation__title {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 0 0 16px;
+  }
+}

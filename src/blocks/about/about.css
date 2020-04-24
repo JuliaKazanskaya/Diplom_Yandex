@@ -1,0 +1,30 @@
+@import url(__paragraph/about__paragraph.css);
+@import url(__photo/about__photo.css);
+@import url(__text/about__text.css);
+@import url(__title/about__title.css);
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  margin: 80px 105px 80px 105px;
+  max-width: 100%;
+  width: calc(100% - 210px);
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .about {
+    margin: 50px 40px 40px 40px;
+    width: calc(100% - 80px);
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .about {
+    margin: 50px 16px 40px 16px;
+    width: calc(100% - 32px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

@@ -1,0 +1,23 @@
+.header__title {
+  margin: 0;
+  padding: 0 0 32px 0;
+  font-family: "Roboto Slab", "Arial Black", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    padding: 0 0 15px 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    padding: 0 0 17px 0;
+  }
+}

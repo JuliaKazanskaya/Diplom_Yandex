@@ -1,0 +1,29 @@
+.commits__button{
+  display: none; 
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .commits__button {
+    font-family: "Roboto", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1a1b22;
+    border: 1px solid #1a1b22;
+    box-sizing: border-box;
+    border-radius: 80px;
+    width: 288px;
+    height: 56px;
+    padding: 15px 60px 15px 60px;
+    margin: 24px 0 0 0;
+    background: #f5f6f7;
+    text-decoration: none;
+    display: flex;
+  }
+  .commits__button:visited{
+    color: #1a1b22;
+    border: 1px solid #1a1b22;
+    background: #f5f6f7;
+  }
+}
