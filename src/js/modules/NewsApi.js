@@ -10,7 +10,7 @@ export default class NewsApi {
 
     getDateInterval(days) {
         let date = new Date();
-        let last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
+        let last = new Date(date.getTime() - ((days-1) * 24 * 60 * 60 * 1000));
         return [
             last.getFullYear() + "-" + (last.getMonth() + 1) + "-" + last.getDate(),
             date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate(),
