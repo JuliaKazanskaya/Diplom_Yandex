@@ -11,20 +11,24 @@ export class NewsCard {
         this.text = text !== null ? this.textFormat(text,"text") : "There is no Description";
         this.author = author !== null ? author : "Media Share";
         this.urlToImage = urlToImage !== null ? urlToImage : './images/example.jpg';
+        this.dateTime = publishedAt.getFullYear() + "-" + ("0"+(publishedAt.getMonth()+1)).slice(-2) + "-" + ("0" + publishedAt.getDate()).slice(-2);
     }
     //Создание карточки
+    //Формат даты
     create() {
-        return `<a href="${this.url}" target="_blank"><article class="card">
-                    <img
-                        src="${this.urlToImage}"
-                        alt="Фото статьи"
-                        class="card__img"
-                    />
-                    <time class="card__date">${this.date}</time>
-                    <h4 class="card__title">${this.title}</h4>
-                    <p class="card__text">${this.text}</p>
-                    <p class="card__author">${this.author}</p>
-              </article></a>`
+        return `<a href="${this.url}" target="_blank">
+                    <article class="card">
+                        <img
+                            src="${this.urlToImage}"
+                            alt="Фото статьи"
+                            class="card__img"
+                        />
+                        <time class="card__date" datetime="${this.dateTime}">${this.date}</time>
+                        <h4 class="card__title">${this.title}</h4>
+                        <p class="card__text">${this.text}</p>
+                        <p class="card__author">${this.author}</p>
+                    </article>
+                </a>`
     }
 
     textFormat(text,type){

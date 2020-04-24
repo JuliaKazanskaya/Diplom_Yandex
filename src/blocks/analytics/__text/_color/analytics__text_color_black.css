@@ -1,3 +1,6 @@
-.analytics__text_color_black{
-    color: #1A1B22;
+.analytics__text_color_black {
+  color: #1a1b22;
+}
+.analytics__text_color_black:visited {
+  color: #1a1b22;
 }
