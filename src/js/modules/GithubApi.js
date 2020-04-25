@@ -10,7 +10,6 @@ export default class NewsApi {
         this.getCommits().then(data => {
             let container = document.getElementsByClassName('commits__cards')[0];
             let commitCards = new CommitCardList(container,data);
-            console.log(data);
             commitCards.render();
         })
     }

@@ -15,21 +15,25 @@ export class CommitCardList {
     }
     //Отрисовка карточек при загрузке страницы
     render() {
+        let count = 20;
         this.cards.forEach(card => {
-            let imageUrl = "./images/me.jpg";
-            if (card.author !== null){
-                imageUrl = card.author.avatar_url;
-            }else if(card.committer !== null){
-                imageUrl = card.committer.avatar_url;
+            if (count >= 0){
+                let imageUrl = "./images/me.jpg";
+                if (card.author !== null){
+                    imageUrl = card.author.avatar_url;
+                }else if(card.committer !== null){
+                    imageUrl = card.committer.avatar_url;
+                }
+                let cardDetails = {
+                    name: card.commit.committer.name,
+                    email: card.commit.committer.email,
+                    date: card.commit.author.date,
+                    message: card.commit.message,
+                    imageUrl: imageUrl
+                };
+                this.addCard(cardDetails.name, cardDetails.email, cardDetails.date, cardDetails.message, cardDetails.imageUrl);
             }
-            let cardDetails = {
-                name: card.commit.committer.name,
-                email: card.commit.committer.email,
-                date: card.commit.author.date,
-                message: card.commit.message,
-                imageUrl: imageUrl
-            };
-            this.addCard(cardDetails.name, cardDetails.email, cardDetails.date, cardDetails.message, cardDetails.imageUrl);
+            count--;
         });
         new Flickity( ".commits__cards", {
             groupCells: true
