@@ -75,9 +75,9 @@ export default class NewsApi {
         let response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`)
             .then(res => {
             if (res.ok) {
-                return Promise.resolve(res.json());
+                return Promise.resolve(res);
             }
-            return Promise.reject(`Ошибка: ${res.status}`);
+            return Promise.reject(`Ошибка: ${res}`);
         });
         return await response.json();
     }
