@@ -72,7 +72,13 @@ export default class NewsApi {
     }
 
     async getNews(from, to, query) {
-        let response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`);
+        let response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`)
+            .then(res => {
+            if (res.ok) {
+                return Promise.resolve(res.json());
+            }
+            return Promise.reject(`Ошибка: ${res.status}`);
+        });
         return await response.json();
     }
 }

@@ -1,18 +1,38 @@
 //Контейнер для карточек новостей
+import {CommitCard} from "./CommitCard";
+import Flickity from "flickity";
+
 export class CommitCardList {
-    constructor(container, card) {
-        this.card = card;
+    constructor(container, cards) {
+        this.cards = cards;
         this.container = container;
     }
     //Добавление карточки в список
-    addCard(url, date, title, text, subtitle) {
-        const card = this.card.create(url, date, title, text, subtitle);
+    addCard(name, email, date, message, urlToImage) {
+        let cardInstance = new CommitCard(name, email, date, message, urlToImage);
+        let card = cardInstance.create();
         this.container.insertAdjacentHTML('beforeend', card);
     }
     //Отрисовка карточек при загрузке страницы
-    render(cards) {
-        cards.forEach(card => {
-            this.addCard(card.url, card.date, card.title, card.text, card.subtitle);
+    render() {
+        this.cards.forEach(card => {
+            let imageUrl = "./images/me.jpg";
+            if (card.author !== null){
+                imageUrl = card.author.avatar_url;
+            }else if(card.committer !== null){
+                imageUrl = card.committer.avatar_url;
+            }
+            let cardDetails = {
+                name: card.commit.committer.name,
+                email: card.commit.committer.email,
+                date: card.commit.author.date,
+                message: card.commit.message,
+                imageUrl: imageUrl
+            };
+            this.addCard(cardDetails.name, cardDetails.email, cardDetails.date, cardDetails.message, cardDetails.imageUrl);
+        });
+        new Flickity( ".commits__cards", {
+            groupCells: true
         });
     }
 }
