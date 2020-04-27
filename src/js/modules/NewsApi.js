@@ -69,6 +69,11 @@ export default class NewsApi {
                     });
             }
         });
+        let query = DataStorage.getItem('query');
+        if (query !== null && query !== ""){
+            searchInput.value = DataStorage.getItem('query');
+            searchElement.click();
+        }
     }
 
     async getNews(from, to, query) {

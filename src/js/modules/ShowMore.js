@@ -39,7 +39,6 @@ export class ShowMore {
                     ];
             }
             new NewsCardList(this.container,articlesList);
-            let showMore = document.getElementsByClassName('content__button')[0];
             this.showMore.style.display = "none";
         }
     }
