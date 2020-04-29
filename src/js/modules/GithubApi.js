@@ -1,4 +1,4 @@
-import {CommitCardList} from "../components/CommitCardList";
+import { CommitCardList } from "../components/CommitCardList";
 
 export default class NewsApi {
     constructor(baseUrl, username, repository) {
@@ -6,10 +6,10 @@ export default class NewsApi {
         this._username = username;
         this._repository = repository;
     }
-    render(){
+    render() {
         this.getCommits().then(data => {
-            let container = document.getElementsByClassName('commits__cards')[0];
-            let commitCards = new CommitCardList(container,data);
+            const container = document.getElementsByClassName('commits__cards')[0];
+            const commitCards = new CommitCardList(container, data);
             commitCards.render();
         })
     }
@@ -17,11 +17,13 @@ export default class NewsApi {
     async getCommits() {
         let response = await fetch(`${this._baseUrl}/repos/${this._username}/${this._repository}/commits`)
             .then(res => {
-            if (res.ok) {
-                return Promise.resolve(res);
-            }
-            return Promise.reject(`Ошибка:`);
-        });
+                if (res.ok) {
+                    return Promise.resolve(res);
+                }
+            })
+            .catch((err) => {
+                return Promise.reject(`Ошибка: ${err}`);
+            });
         return await response.json();
     }
 }

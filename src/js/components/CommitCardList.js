@@ -9,8 +9,8 @@ export class CommitCardList {
     }
     //Добавление карточки в список
     addCard(name, email, date, message, urlToImage) {
-        let cardInstance = new CommitCard(name, email, date, message, urlToImage);
-        let card = cardInstance.create();
+        const cardInstance = new CommitCard(name, email, date, message, urlToImage);
+        const card = cardInstance.create();
         this.container.insertAdjacentHTML('beforeend', card);
     }
     //Отрисовка карточек при загрузке страницы

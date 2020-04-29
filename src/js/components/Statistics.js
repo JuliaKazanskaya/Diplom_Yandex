@@ -72,14 +72,14 @@ export class Statistics {
         }
     }
     getDateName(dateString){
-        let days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
         let d = new Date(dateString);
         let dayName = days[d.getDay()];
         return d.getDate()+ ", " + dayName;
     }
     getLastSevenDays(){
         let date = new Date();
-        let monthNames = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+        const monthNames = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
         for (let i=0; i < 7; i++){
             let day = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
             this.byDay[day.getDate()] = 0;

@@ -1,7 +1,7 @@
 //Шаблон карточки новости
 export class NewsCard {
     constructor(url, date, title, text, author, urlToImage) {
-        let months = [
+        const months = [
             'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
         ];
         let publishedAt = date !== null ? new Date(date) : new Date();

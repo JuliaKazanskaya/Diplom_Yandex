@@ -1,6 +1,6 @@
 import DataStorage from "./DataStorage";
 import awaitAsyncGenerator from "@babel/runtime/helpers/esm/awaitAsyncGenerator";
-import {NewsCardList} from "../components/NewsCardList";
+import { NewsCardList } from "../components/NewsCardList";
 
 export default class NewsApi {
     constructor(baseUrl, token) {
@@ -10,7 +10,7 @@ export default class NewsApi {
 
     getDateInterval(days) {
         let date = new Date();
-        let last = new Date(date.getTime() - ((days-1) * 24 * 60 * 60 * 1000));
+        let last = new Date(date.getTime() - ((days - 1) * 24 * 60 * 60 * 1000));
         return [
             last.getFullYear() + "-" + (last.getMonth() + 1) + "-" + last.getDate(),
             date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate(),
@@ -40,29 +40,31 @@ export default class NewsApi {
         DataStorage.setItem('showedCardsCount', 0);
         searchElement.addEventListener(eventType, function (event) {
             event.preventDefault();
-            if (searchInput.value === ""){
+            if (searchInput.validity.valueMissing) {
+                //searchInput.setCustomValidity("I expect an e-mail, darling!");
                 alert("Нужно ввести ключевое слово");
-            }else{
+            } else {
                 empty_block.style.display = "none";
                 result_block.style.display = "none";
                 showMore.style.display = "none";
                 loader_block.style.display = "flex";
                 DataStorage.setItem('query', searchInput.value);
-                container.innerHTML = "";
+                while (container.firstChild) container.removeChild(container.firstChild);
+                //container.innerHTML = "";
                 classInstance.getNews(dateInterval[0], dateInterval[1], searchInput.value)
                     .then(data => {
                         DataStorage.setItem(searchInput.value, JSON.stringify(data));
                         loader_block.style.display = "none";
-                        if (data.totalResults === 0){
+                        if (data.totalResults === 0) {
                             empty_block.style.display = "flex";
-                        }else{
-                            if (data.totalResults > 3){
+                        } else {
+                            if (data.totalResults > 3) {
                                 showMore.style.display = "flex";
-                                let articlesList = [data.articles[0],data.articles[1],data.articles[2]];
-                                new NewsCardList(container,articlesList);
+                                let articlesList = [data.articles[0], data.articles[1], data.articles[2]];
+                                new NewsCardList(container, articlesList);
                                 DataStorage.setItem('showedCardsCount', 3);
-                            }else{
-                                new NewsCardList(container,data.articles);
+                            } else {
+                                new NewsCardList(container, data.articles);
                             }
                             result_block.style.display = "flex";
                         }
@@ -70,7 +72,7 @@ export default class NewsApi {
             }
         });
         let query = DataStorage.getItem('query');
-        if (query !== null && query !== ""){
+        if (query !== null && query !== "") {
             searchInput.value = DataStorage.getItem('query');
             searchElement.click();
         }
@@ -79,11 +81,13 @@ export default class NewsApi {
     async getNews(from, to, query) {
         let response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`)
             .then(res => {
-            if (res.ok) {
-                return Promise.resolve(res);
-            }
-            return Promise.reject(`Ошибка: ${res}`);
-        });
+                if (res.ok) {
+                    return Promise.resolve(res);
+                }
+            })
+            .catch((err) => {
+                return Promise.reject(`Ошибка: ${err}`);
+            });;
         return await response.json();
     }
 }
