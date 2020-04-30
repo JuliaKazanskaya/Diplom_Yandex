@@ -20,9 +20,11 @@ export default class NewsApi {
                 if (res.ok) {
                     return Promise.resolve(res);
                 }
+                else
+                    return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                return Promise.reject(`Ошибка: ${err}`);
+                console.log(err);
             });
         return await response.json();
     }

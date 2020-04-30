@@ -15,21 +15,21 @@ export class Statistics {
     analyze() {
         this.query = DataStorage.getItem('query');
         if (this.query !== null && this.query !== ""){
-            let dateInterval = this.api.getDateInterval(7);
+            const dateInterval = this.api.getDateInterval(7);
             this.api.getNews(dateInterval[0], dateInterval[1], this.query)
                 .then(data => {
                     if (data.totalResults === 0){
                         this.drawResults();
                     }else{
                         this.total = data.totalResults;
-                        let analyzerInstance = this;
+                        const analyzerInstance = this;
                         function groupByDay(article, index) {
-                            let lowerCaseTitle = article.title.toLowerCase();
-                            let lowerCaseQuery = analyzerInstance.query.toLowerCase();
+                            const lowerCaseTitle = article.title.toLowerCase();
+                            const lowerCaseQuery = analyzerInstance.query.toLowerCase();
                             if(article.title !== null && lowerCaseTitle.indexOf(lowerCaseQuery) !== -1)
                                 analyzerInstance.headersCount++;
                             //group by day
-                            let day = new Date(article.publishedAt);
+                            const day = new Date(article.publishedAt);
                             analyzerInstance.byDay[day.getDate()]+=1;
                         }
                         data.articles.forEach(groupByDay);
@@ -41,14 +41,14 @@ export class Statistics {
         }
     }
     drawResults(){
-        let analyticsName = document.getElementsByClassName("analytics__name")[0];
-        let analyticsWeek = document.getElementsByClassName("analytics__week")[0];
-        let analyticsSubtitle = document.getElementsByClassName("analytics__subtitle")[0];
-        let diagramTableNamesBlock = document.getElementsByClassName("diagram__table-col")[0];
-        let diagramTableCells = diagramTableNamesBlock.getElementsByClassName("diagram__table-cell");
-        let diagramTableBlocks = document.getElementsByClassName("diagram__table-col")[1];
-        let diagramTableValues = diagramTableBlocks.getElementsByClassName("diagram__table-cell");
-        let diagramTableTitle = document.getElementsByClassName("diagram__title-table")[0];
+        const analyticsName = document.getElementsByClassName("analytics__name")[0];
+        const analyticsWeek = document.getElementsByClassName("analytics__week")[0];
+        const analyticsSubtitle = document.getElementsByClassName("analytics__subtitle")[0];
+        const diagramTableNamesBlock = document.getElementsByClassName("diagram__table-col")[0];
+        const diagramTableCells = diagramTableNamesBlock.getElementsByClassName("diagram__table-cell");
+        const diagramTableBlocks = document.getElementsByClassName("diagram__table-col")[1];
+        const diagramTableValues = diagramTableBlocks.getElementsByClassName("diagram__table-cell");
+        const diagramTableTitle = document.getElementsByClassName("diagram__title-table")[0];
         if (this.moths.length === 1){
             diagramTableTitle.innerText = "дата (" + this.moths[0] + ")";
         }else{
@@ -73,15 +73,15 @@ export class Statistics {
     }
     getDateName(dateString){
         const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-        let d = new Date(dateString);
-        let dayName = days[d.getDay()];
+        const d = new Date(dateString);
+        const dayName = days[d.getDay()];
         return d.getDate()+ ", " + dayName;
     }
     getLastSevenDays(){
-        let date = new Date();
+        const date = new Date();
         const monthNames = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
         for (let i=0; i < 7; i++){
-            let day = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
+            const day = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
             this.byDay[day.getDate()] = 0;
             this.byDayName[day.getDate()] = this.getDateName(day);
             if (!this.moths.includes(monthNames[day.getMonth()])){

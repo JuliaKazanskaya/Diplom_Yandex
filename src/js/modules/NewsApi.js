@@ -28,35 +28,35 @@ export default class NewsApi {
     }
 
     setEventHandler(eventType, elementSelector, elementSelectorType, inputSelector, inputSelectorType, containerSelector, containerSelectorType) {
-        let searchElement = this.getFirstElement(elementSelector, elementSelectorType);
-        let searchInput = this.getFirstElement(inputSelector, inputSelectorType);
-        let container = this.getFirstElement(containerSelector, containerSelectorType);
-        let showMore = this.getFirstElement('content__button', 'class');
-        let loader_block = this.getFirstElement('content__loading', 'class');
-        let empty_block = this.getFirstElement('content__nothing', 'class');
-        let result_block = this.getFirstElement('content__result', 'class');
-        let dateInterval = this.getDateInterval(7);
-        let classInstance = this;
+        const searchElement = this.getFirstElement(elementSelector, elementSelectorType);
+        const searchInput = this.getFirstElement(inputSelector, inputSelectorType);
+        const container = this.getFirstElement(containerSelector, containerSelectorType);
+        const showMore = this.getFirstElement('content__button', 'class');
+        const loaderBlock = this.getFirstElement('content__loading', 'class');
+        const emptyBlock = this.getFirstElement('content__nothing', 'class');
+        const resultBlock = this.getFirstElement('content__result', 'class');
+        const dateInterval = this.getDateInterval(7);
+        const classInstance = this;
         DataStorage.setItem('showedCardsCount', 0);
         searchElement.addEventListener(eventType, function (event) {
             event.preventDefault();
             if (searchInput.validity.valueMissing) {
-                //searchInput.setCustomValidity("I expect an e-mail, darling!");
+                //searchInput.setCustomValidity("Нужно ввести ключевое слово");
                 alert("Нужно ввести ключевое слово");
             } else {
-                empty_block.style.display = "none";
-                result_block.style.display = "none";
+                emptyBlock.style.display = "none";
+                resultBlock.style.display = "none";
                 showMore.style.display = "none";
-                loader_block.style.display = "flex";
+                loaderBlock.style.display = "flex";
                 DataStorage.setItem('query', searchInput.value);
                 while (container.firstChild) container.removeChild(container.firstChild);
                 //container.innerHTML = "";
                 classInstance.getNews(dateInterval[0], dateInterval[1], searchInput.value)
                     .then(data => {
                         DataStorage.setItem(searchInput.value, JSON.stringify(data));
-                        loader_block.style.display = "none";
+                        loaderBlock.style.display = "none";
                         if (data.totalResults === 0) {
-                            empty_block.style.display = "flex";
+                            emptyBlock.style.display = "flex";
                         } else {
                             if (data.totalResults > 3) {
                                 showMore.style.display = "flex";
@@ -66,7 +66,7 @@ export default class NewsApi {
                             } else {
                                 new NewsCardList(container, data.articles);
                             }
-                            result_block.style.display = "flex";
+                            resultBlock.style.display = "flex";
                         }
                     });
             }
@@ -84,10 +84,12 @@ export default class NewsApi {
                 if (res.ok) {
                     return Promise.resolve(res);
                 }
+                else
+                    return Promise.reject(`Ошибка: ${res.status}`); 
             })
             .catch((err) => {
-                return Promise.reject(`Ошибка: ${err}`);
-            });;
+                console.log(err);
+            });
         return await response.json();
     }
 }
