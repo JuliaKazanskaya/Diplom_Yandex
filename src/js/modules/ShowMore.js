@@ -1,5 +1,6 @@
 import DataStorage from "./DataStorage";
 import {NewsCardList} from "../components/NewsCardList";
+import {stepShow} from "../constants/Data"
 
 export class ShowMore {
     constructor(showedCardsCount,data,notShownCardsCount,showMore,container) {
@@ -11,14 +12,14 @@ export class ShowMore {
     }
 
     next() {
-        if (this.notShownCardsCount > 3){
+        if (this.notShownCardsCount > stepShow){
             let articlesList = [
                 this.data.articles[this.showedCardsCount+1],
                 this.data.articles[this.showedCardsCount+2],
                 this.data.articles[this.showedCardsCount+3]
             ];
             new NewsCardList(this.container,articlesList);
-            DataStorage.setItem('showedCardsCount', this.showedCardsCount + 3);
+            DataStorage.setItem('showedCardsCount', this.showedCardsCount + stepShow);
         }else{
             let articlesList;
             switch (this.notShownCardsCount) {

@@ -15,6 +15,7 @@ export class CommitCardList {
     }
     //Отрисовка карточек при загрузке страницы
     render() {
+        //кол-во карточек для отрисовки
         let count = 20;
         this.cards.forEach(card => {
             if (count >= 0){
@@ -24,7 +25,7 @@ export class CommitCardList {
                 }else if(card.committer !== null){
                     imageUrl = card.committer.avatar_url;
                 }
-                let cardDetails = {
+                const cardDetails = {
                     name: card.commit.committer.name,
                     email: card.commit.committer.email,
                     date: card.commit.author.date,

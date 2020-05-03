@@ -1,6 +1,7 @@
 import DataStorage from "../modules/DataStorage";
 import NewsApi from "../modules/NewsApi";
-import {newsApiKey, newsApiUrl, countArticles} from "../constants/Settings";
+import {newsApiKey, newsApiUrl} from "../constants/Settings";
+import {interval, monthIP, daysCount, week, diagramWidth, countArticles} from "../constants/Data"
 
 export class Statistics {
     constructor(){
@@ -15,7 +16,7 @@ export class Statistics {
     analyze() {
         this.query = DataStorage.getItem('query');
         if (this.query !== null && this.query !== ""){
-            const dateInterval = this.api.getDateInterval(7);
+            const dateInterval = this.api.getDateInterval(interval);
             this.api.getNews(dateInterval[0], dateInterval[1], this.query)
                 .then(data => {
                     if (data.totalResults === 0){
@@ -35,6 +36,9 @@ export class Statistics {
                         data.articles.forEach(groupByDay);
                         this.drawResults();
                     }
+                })
+                .catch((err) => {
+                    console.log(err);
                 });
         }else{
             this.drawResults();
@@ -63,25 +67,25 @@ export class Statistics {
             diagramTableValues[domIterator].innerText = this.byDay[day];
             let diagramTableBlockWidth = 0;
             if (this.total < countArticles){
-                diagramTableBlockWidth = (this.total * this.byDay[day] / this.total) * 85 / this.total;
+                diagramTableBlockWidth = (this.total * this.byDay[day] / this.total) * diagramWidth / this.total;
             }else{
-                diagramTableBlockWidth = (countArticles * this.byDay[day] / countArticles) * 85 / countArticles;
+                diagramTableBlockWidth = (countArticles * this.byDay[day] / countArticles) * diagramWidth / countArticles;
             }
             diagramTableValues[domIterator].style = "width:"+diagramTableBlockWidth+"vw!important";
             domIterator++;
         }
     }
     getDateName(dateString){
-        const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        const days = week;
         const d = new Date(dateString);
         const dayName = days[d.getDay()];
         return d.getDate()+ ", " + dayName;
     }
     getLastSevenDays(){
         const date = new Date();
-        const monthNames = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+        const monthNames = monthIP;
         for (let i=0; i < 7; i++){
-            const day = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
+            const day = new Date(date.getTime() - (i * daysCount));
             this.byDay[day.getDate()] = 0;
             this.byDayName[day.getDate()] = this.getDateName(day);
             if (!this.moths.includes(monthNames[day.getMonth()])){

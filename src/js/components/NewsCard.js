@@ -1,12 +1,11 @@
+import {titleLength, textLength, month} from "../constants/Data"
+import SanitizeHTML from "../utils/SanitizeHTML"
 //Шаблон карточки новости
 export class NewsCard {
     constructor(url, date, title, text, author, urlToImage) {
-        const months = [
-            'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
-        ];
-        let publishedAt = date !== null ? new Date(date) : new Date();
+        const publishedAt = date !== null ? new Date(date) : new Date();
         this.url = url !== null ? url : "#";
-        this.date = publishedAt.getDate() + " " + months[publishedAt.getMonth()] + ", " + publishedAt.getFullYear();
+        this.date = publishedAt.getDate() + " " + month[publishedAt.getMonth()] + ", " + publishedAt.getFullYear();
         this.title = title !== null ? this.textFormat(title,"title") : "Untitled";
         this.text = text !== null ? this.textFormat(text,"text") : "There is no Description";
         this.author = author !== null ? author : "Media Share";
@@ -16,28 +15,30 @@ export class NewsCard {
     //Создание карточки
     //Формат даты
     create() {
-        return `<a href="${this.url}" target="_blank">
+        const tmp = new SanitizeHTML();
+        
+        return `<a href="${tmp.check(this.url)}" target="_blank">
                     <article class="card">
                         <img
-                            src="${this.urlToImage}"
+                            src="${tmp.check(this.urlToImage)}"
                             alt="Фото статьи"
                             class="card__img"
                         />
-                        <time class="card__date" datetime="${this.dateTime}">${this.date}</time>
-                        <h4 class="card__title">${this.title}</h4>
-                        <p class="card__text">${this.text}</p>
-                        <p class="card__author">${this.author}</p>
+                        <time class="card__date" datetime="${tmp.check(this.dateTime)}">${tmp.check(this.date)}</time>
+                        <h4 class="card__title">${tmp.check(this.title)}</h4>
+                        <p class="card__text">${tmp.check(this.text)}</p>
+                        <p class="card__author">${tmp.check(this.author)}</p>
                     </article>
                 </a>`
     }
 
     textFormat(text,type){
         let formattedText = text;
-        if (type === "text" && text.length > 185){
-            formattedText = text.substring(0,185) + "...";
+        if (type === "text" && text.length > textLength){
+            formattedText = text.substring(0,textLength) + "...";
         }
-        if (type === "title" && text.length > 33){
-            formattedText = text.substring(0,33) + "...";
+        if (type === "title" && text.length > titleLength){
+            formattedText = text.substring(0,titleLength) + "...";
         }
         return formattedText;
     }

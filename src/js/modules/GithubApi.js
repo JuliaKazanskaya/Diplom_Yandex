@@ -7,25 +7,20 @@ export default class NewsApi {
         this._repository = repository;
     }
     render() {
-        this.getCommits().then(data => {
-            const container = document.getElementsByClassName('commits__cards')[0];
-            const commitCards = new CommitCardList(container, data);
-            commitCards.render();
-        })
-    }
-
-    async getCommits() {
-        let response = await fetch(`${this._baseUrl}/repos/${this._username}/${this._repository}/commits`)
-            .then(res => {
-                if (res.ok) {
-                    return Promise.resolve(res);
-                }
-                else
-                    return Promise.reject(`Ошибка: ${res.status}`);
+        this.getCommits()
+            .then(data => {
+                const container = document.getElementsByClassName('commits__cards')[0];
+                const commitCards = new CommitCardList(container, data);
+                commitCards.render();
             })
             .catch((err) => {
                 console.log(err);
             });
-        return await response.json();
+    }
+
+    async getCommits() {
+        const response = await fetch(`${this._baseUrl}/repos/${this._username}/${this._repository}/commits`)
+        if (response.ok) return await response.json();
+        return Promise.reject(`Ошибка: ${res.status}`);
     }
 }

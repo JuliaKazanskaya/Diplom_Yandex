@@ -1,6 +1,7 @@
 import DataStorage from "./DataStorage";
 import awaitAsyncGenerator from "@babel/runtime/helpers/esm/awaitAsyncGenerator";
 import { NewsCardList } from "../components/NewsCardList";
+import { daysCount, interval, stepShow, errorMessage} from "../constants/Data"
 
 export default class NewsApi {
     constructor(baseUrl, token) {
@@ -9,8 +10,8 @@ export default class NewsApi {
     }
 
     getDateInterval(days) {
-        let date = new Date();
-        let last = new Date(date.getTime() - ((days - 1) * 24 * 60 * 60 * 1000));
+        const date = new Date();
+        const last = new Date(date.getTime() - ((days - 1) * daysCount));
         return [
             last.getFullYear() + "-" + (last.getMonth() + 1) + "-" + last.getDate(),
             date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate(),
@@ -35,15 +36,29 @@ export default class NewsApi {
         const loaderBlock = this.getFirstElement('content__loading', 'class');
         const emptyBlock = this.getFirstElement('content__nothing', 'class');
         const resultBlock = this.getFirstElement('content__result', 'class');
-        const dateInterval = this.getDateInterval(7);
+        const errorElement = this.getFirstElement('error-message', 'class');
+        const dateInterval = this.getDateInterval(interval);
         const classInstance = this;
         DataStorage.setItem('showedCardsCount', 0);
         searchElement.addEventListener(eventType, function (event) {
             event.preventDefault();
-            if (searchInput.validity.valueMissing) {
-                //searchInput.setCustomValidity("Нужно ввести ключевое слово");
-                alert("Нужно ввести ключевое слово");
+            if (!searchInput.validity.valid) {
+                //alert("Нужно ввести ключевое слово");
+                    errorElement.classList.add('error_invalid');
+                    errorElement.classList.remove('error-message');
+                    switch (true) {
+                        case searchInput.validity.valueMissing:
+                            errorElement.innerHTML = errorMessage.requiredText;
+                            break;
+                        case searchInput.validity.tooShort:
+                            errorElement.innerHTML  = errorMessage.lengthText;
+                            break;
+                        }
             } else {
+                errorElement.classList.remove('error_invalid');
+                errorElement.classList.add('error-message');
+                errorElement.innerHTML  = '';
+
                 emptyBlock.style.display = "none";
                 resultBlock.style.display = "none";
                 showMore.style.display = "none";
@@ -58,20 +73,23 @@ export default class NewsApi {
                         if (data.totalResults === 0) {
                             emptyBlock.style.display = "flex";
                         } else {
-                            if (data.totalResults > 3) {
+                            if (data.totalResults > stepShow) {
                                 showMore.style.display = "flex";
-                                let articlesList = [data.articles[0], data.articles[1], data.articles[2]];
+                                const articlesList = [data.articles[0], data.articles[1], data.articles[2]];
                                 new NewsCardList(container, articlesList);
-                                DataStorage.setItem('showedCardsCount', 3);
+                                DataStorage.setItem('showedCardsCount', stepShow);
                             } else {
                                 new NewsCardList(container, data.articles);
                             }
                             resultBlock.style.display = "flex";
                         }
+                    })
+                    .catch((err) => {
+                        console.log(err);
                     });
             }
         });
-        let query = DataStorage.getItem('query');
+        const query = DataStorage.getItem('query');
         if (query !== null && query !== "") {
             searchInput.value = DataStorage.getItem('query');
             searchElement.click();
@@ -79,17 +97,8 @@ export default class NewsApi {
     }
 
     async getNews(from, to, query) {
-        let response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`)
-            .then(res => {
-                if (res.ok) {
-                    return Promise.resolve(res);
-                }
-                else
-                    return Promise.reject(`Ошибка: ${res.status}`); 
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        return await response.json();
+        const response = await fetch(`${this._baseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${this._token}&language=ru`)
+        if (response.ok) return await response.json();
+        return Promise.reject(`Ошибка: ${res.status}`);
     }
 }

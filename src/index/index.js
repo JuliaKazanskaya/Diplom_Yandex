@@ -1,8 +1,9 @@
 import './index.css';
 import NewsApi from "../js/modules/NewsApi";
-import {newsApiUrl,newsApiKey,countArticles} from "../js/constants/Settings";
+import {newsApiUrl, newsApiKey} from "../js/constants/Settings";
 import DataStorage from "../js/modules/DataStorage";
 import {ShowMore} from "../js/modules/ShowMore";
+import {countArticles} from "../js/constants/Data"
 
 const newsHandler = new NewsApi(newsApiUrl,newsApiKey);
 newsHandler.setEventHandler(
