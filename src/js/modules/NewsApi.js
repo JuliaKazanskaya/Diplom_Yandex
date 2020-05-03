@@ -84,6 +84,12 @@ export default class NewsApi {
                             resultBlock.style.display = "flex";
                         }
                     })
+                    .then((res) => {
+                        if (res.status != 200) {
+                            loaderBlock.style.display = "flex";
+                            console.log(`Ошибка сервера ${res.status}`);
+                        }
+                    })
                     .catch((err) => {
                         console.log(err);
                     });
