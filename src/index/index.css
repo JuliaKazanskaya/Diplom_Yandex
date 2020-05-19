@@ -11,6 +11,7 @@
 @import url(../blocks/arrow/arrow.css);
 @import url(../blocks/wrapper/wrapper.css);
 @import url(../blocks/hidden/hidden.css);
+@import url(../blocks/error/error.css);
 
 body {
   background-color: #fff;
