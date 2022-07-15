@@ -1,5 +1,5 @@
-const newsApiUrl = 'https://newsapi.org/v2/everything';
-const newsApiKey = 'e733d1f6586b476f96e90aa53b1379f3';
+const newsApiUrl = 'https://praktikum.tk/news/v2/top-headlines';
+const newsApiKey = '1b8e0749886f411cb979573b201fdf9d';
 const githubUrl = 'https://api.github.com';
 const githubUsername = 'JuliaBolelova';
 const githubRepository = 'Diplom_Yandex';
